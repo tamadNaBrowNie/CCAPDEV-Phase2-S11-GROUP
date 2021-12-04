@@ -1,32 +1,18 @@
-$("document").ready = function () {
-    
-$("#submit").click(function() {
-        
-    var User = {
-        Name:String, Password:String
-    }
-
-    User.Name = $("#tName").val();
-    User.Password = $("#tPassword").val();
-    alert("Processing");
-
-    console.log(User.Name + " " + User.Password);
-    
-});
- 
-    
-}
-    
-
-function getUser() {
-        
+$(document).ready(function () {
+  
+    $("#login").click(function() {
+            
         var User = {
             Name:String, Password:String
         }
     
         User.Name = $("#tName").val();
-        User.Password = $("#tPassword").val();
-        alert("Processing");
+        User.Password = $("#pPassword").val();
+        var sUser = JSON.stringify(User);
     
-        console.log(User.Name + " " + User.Password);
-        }
+        console.log(sUser);
+        
+    });
+     
+        
+}) 
