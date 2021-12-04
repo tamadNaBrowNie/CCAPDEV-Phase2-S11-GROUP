@@ -1,16 +1,32 @@
-$.ready = function () {
+$("document").ready = function () {
+    
+$("#submit").click(function() {
+        
     var User = {
-        Name, Password
+        Name:String, Password:String
     }
-    function getUser() {
+
+    User.Name = $("#tName").val();
+    User.Password = $("#tPassword").val();
+    alert("Processing");
+
+    console.log(User.Name + " " + User.Password);
+    
+});
  
+    
+}
+    
+
+function getUser() {
+        
+        var User = {
+            Name:String, Password:String
+        }
+    
         User.Name = $("#tName").val();
         User.Password = $("#tPassword").val();
         alert("Processing");
-    $("#display").html(User.Name + " " + User.Password);
+    
+        console.log(User.Name + " " + User.Password);
         }
-        
-    $("#submit").click(getUser());
-}
-
-
