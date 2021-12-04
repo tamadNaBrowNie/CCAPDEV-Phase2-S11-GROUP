@@ -1,4 +1,4 @@
-$(document).onload = function () {
+$.ready = function () {
     var User = {
         Name, Password
     }
