@@ -9,6 +9,11 @@
         <link rel="stylesheet" type="text/css" href="../css/form_input.css">
         <link rel="stylesheet" type="text/css" href="../css/button.css">
         <link rel="stylesheet" type="text/css" href="../css/form.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+
+        </script>
+        <script defer src="../js/register.js">
+        </script>
 
     </head>
 
@@ -21,8 +26,7 @@
         <div id="regDiv" class="modal">
             <form class="reg-Form" method="post">
                 <div class="logoContainer">
-                    <span onclick="document.getElementById('regDiv').style.display='none'"
-                          class="close" title="Close Form">&times;</span>
+                    <span class="close" title="Close Form">&times;</span>
                     <img src="../srcs/logo.png" alt="Logo" class="logo">
                 </div>
 
@@ -51,22 +55,11 @@
                 </div>
 
                 <div class="userInputs" style="background-color:#f1f1f1">
-                    <button type="button"
-                            onclick="document.getElementById('regDiv').style.display='none'"
-                            class="cancel">Cancel</button>
+                    <button type="button" class="cancel">Cancel</button>
                 </div>
             </form>
         </div>
 
-        <script>
-            var modal = document.getElementById('regDiv');
-
-            window.onclick = function (event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-        </script>
 
     </body>
 
