@@ -9,15 +9,14 @@
   <script>
     $(() => {
       const DELAY = 10000;
+      var time = 10;
       $('.modal').hide();
       $('button').click(() => {
         $('.modal').show();
-        setTimeout(() => {
-          $(window).attr('location', 'login.html');
-        }, DELAY);
-
+        setTimeout(() => { $(window).attr('location', 'login.html') }, DELAY);
       });
     })
+
   </script>
 
   <body>
@@ -25,7 +24,8 @@
     <button type="button">Logout</button>
 
     <div id="id01" class="modal">
-      <h1 class="container">You will return to login page in 10 sec</h1>
+      <h1 class="container">You will return to login page in <span
+              id='timer'></span>sec</h1>
     </div>
 
 
