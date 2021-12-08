@@ -6,7 +6,5 @@ $(() => {//this is short-shorthand for $(document).ready(function() {})
             $('.modal').hide();
         }
     });
-    
-    $('.reg-Form').submit(() => {$(window).attr('location', 'login.html')})
 
 });
