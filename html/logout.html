@@ -13,6 +13,7 @@
       $('.modal').hide();
       $('button').click(() => {
         $('.modal').show();
+        $('#timer').html(String(time));
         setTimeout(() => { $(window).attr('location', 'login.html') }, DELAY);
       });
     })
