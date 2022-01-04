@@ -13,7 +13,7 @@
       $('.modal').hide();
       $('button').click(() => {
         $('.modal').show();
-        $('#timer').html(String(time));
+        $('#timer').html(String(time + 's'));
         setTimeout(() => { $(window).attr('location', 'login.html') }, DELAY);
       });
     })
@@ -26,7 +26,7 @@
 
     <div id="id01" class="modal">
       <h1 class="container">You will return to login page in <span
-              id='timer'></span>sec</h1>
+              id='timer'></span></h1>
     </div>
 
 
