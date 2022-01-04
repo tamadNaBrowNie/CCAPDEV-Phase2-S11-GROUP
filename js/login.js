@@ -1,5 +1,5 @@
 
-$(function () {
+$(() => {
     
     $(".reg-Form").submit(() => {
 

@@ -6,5 +6,7 @@ $(() => {//this is short-shorthand for $(document).ready(function() {})
             $('.modal').hide();
         }
     });
-
+/*TODO
+    once we know how to do the server, we need to add the info here to server.
+*/
 });
