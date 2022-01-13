@@ -7,6 +7,6 @@ $(() => {//this is short-shorthand for $(document).ready(function() {})
         }
     });
 /*TODO
-    once we know how to do the server, we need to add the info here to server.
+    if we need extra logic for none http things, this is where we put it.
 */
 });

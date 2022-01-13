@@ -1,6 +1,7 @@
 
 $(() => {
-    
+    $('#login').attr('method', 'post');
+    $('#login').attr('action', 'foo');
     $(".reg-Form").submit(() => {
 
             var User = {
@@ -10,9 +11,7 @@ $(() => {
             User.Name = $("#tName").val();
             User.Password = $("#pPassword").val();
             var sUser = JSON.stringify(User);
-/*TODO
-            instead of alert, gotta find a way to send sUser as http request.
-*/
+/*TODO once we use an http in html, might remove the .submit  portion*/
             alert(sUser);
 
         })
