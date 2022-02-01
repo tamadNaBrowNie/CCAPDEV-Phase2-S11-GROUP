@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Register Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../css/register_style.css">
+        <link rel="stylesheet" type="text/css" href="../css/form_input.css">
+        <link rel="stylesheet" type="text/css" href="../css/button.css">
+        <link rel="stylesheet" type="text/css" href="../css/form.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script defer src="../js/register.js"></script>
+
+    </head>
+
+    <body>
+        <main>
+            <h2>Don't have an account? Click here:</h2>
+            <button id="getRegistered" style="width:auto;">Register an Account</button>
+            <!--Created by P. Tolentino-->
+            <div id="regDiv" class="modal">
+                <form class="reg-Form" method="post" action="login.html">
+                    <div class="logoContainer">
+                        <span class="close" title="Close Form">&times;</span>
+                        <img src="../srcs/logo.png" alt="Logo" class="logo">
+                    </div>
+
+                    <div class="userInputs">
+                        <label for="userName">Username:</label><br>
+                        <input class="form_info" type=text placeholder="Enter Username" name="uName" id="userName"
+                            required><br>
+
+                        <label for="passWord">Password:</label><br>
+                        <input class="form_info" type=password placeholder="Enter Password" name="passWord" id="passWord"
+                            required><br>
+
+                        <label for="confirmPW">Confirm Password:</label><br>
+                        <input class="form_info" type=password placeholder="Confirm Password" name="confirmPassWord"
+                            id="confirmPW" required><br>
+
+                        <label for="eMail">E-mail Address:</label><br>
+                        <input class="form_info" type=eMail placeholder="Enter E-mail Address" name="eMail" id="eMail"
+                            required><br>
+
+                        <button type="submit" name="submit">Register</button>
+                    </div>
+
+                    <div class="userInputs" style="background-color:#f1f1f1">
+                        <button type="button" class="cancel">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+        </main>
+    </body>
+
+</html>
