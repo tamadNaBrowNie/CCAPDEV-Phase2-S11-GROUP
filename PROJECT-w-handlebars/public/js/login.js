@@ -3,7 +3,7 @@ $(() => {
     $('#login').attr('method', 'post');
     $('#login').attr('action', 'foo');
     $(".reg-Form").submit(() => {
-        var url;
+        var ur = 'http://localhost:3000/main';
         var User = {
             Name: String, Password: String
         };
