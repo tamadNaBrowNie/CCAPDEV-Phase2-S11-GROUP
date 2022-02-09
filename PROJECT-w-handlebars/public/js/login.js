@@ -3,7 +3,7 @@ $(() => {
     $('#login').attr('method', 'post');
     $('#login').attr('action', 'foo');
     $(".reg-Form").submit(() => {
-
+        var url;
         var User = {
             Name: String, Password: String
         };
@@ -12,7 +12,7 @@ $(() => {
         User.Password = $("#pPassword").val();
         var sUser = JSON.stringify(User);
         /*TODO render home.hbs with response from POSTing sUser*/
-        $.post('ttp://localhost:3000', sUser, res.render(smth), 'json'
+        $.post('http://localhost:3000', sUser, $('window').attr('location',url),'json'
 
         )
 
