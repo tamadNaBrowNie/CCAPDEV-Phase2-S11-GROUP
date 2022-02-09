@@ -1,9 +1,10 @@
 () => {
 
     $('#search').val("Enter Name or Description");
-
+    var keyword;
     $('#submit').click(
-        () => $('#search').val()
+        $.post('localhost:3000', () => $('#search').val())
+        
     );
 
 }
