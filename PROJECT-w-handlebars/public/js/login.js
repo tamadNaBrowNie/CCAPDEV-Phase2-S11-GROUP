@@ -12,7 +12,6 @@ $(() => {
         User.Password = $("#pPassword").val();
         var sUser = JSON.stringify(User);
         /*TODO render home.hbs with response from POSTing sUser*/
-        $.get(url, sUser,
-        );
+       $.get(url, sUser);
     });
 })

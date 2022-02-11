@@ -1,7 +1,7 @@
 $(() => {//this is short-shorthand for $(document).ready(function() {})
     
     var User = {
-        Name: String, Password: String
+        Name: String, Password: String, Email: String
     };
     $('#getRegistered').click(()=>{ $('#regDiv').show();})
     $('.cancel, .close').click(() => { $('#regDiv').hide(); });
@@ -13,7 +13,8 @@ $(() => {//this is short-shorthand for $(document).ready(function() {})
     $('[name = "submit"]').click(() => {
         User.Name = $('#userName').val();
         User.Password = $('#passWord').val();
-        $.post('localhost:3000', User, alert("You are now registered"), "json")
+        User.Email = $('#eMail').val();
+        $.post('localhost:3000', User, console.log(User));
     })
 /*TODO
     if we need extra logic for none http things, this is where we put it.
