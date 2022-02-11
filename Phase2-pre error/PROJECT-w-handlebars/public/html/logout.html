@@ -1,0 +1,38 @@
+<html>
+
+  <head>
+    <title>Logout</title>
+    <link rel="stylesheet" type="text/css" href="../css/logout.css">
+  </head>
+  <!--CSS, HTML, JS by Elijah Dayon-->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+  </script>
+  <script>
+    $(() => {
+      const DELAY = 10000;
+      var time = 10;
+      $('.modal').hide();
+      $('button').click(() => {
+        $('.modal').show();
+        $('#timer').html(String(time + 's'));
+        setTimeout(() => { $(window).attr('location', 'login.html') }, DELAY);
+      });
+    })
+
+  </script>
+
+  <body>
+    <main>
+    <img class="image1" src="../srcs/pic1.jpg">
+    <button type="button">Logout</button>
+
+    <div id="id01" class="modal">
+      <h1 class="container">You will return to login page in <span
+              id='timer'></span></h1>
+    </div>
+    </main>
+
+
+  </body>
+
+</html>
