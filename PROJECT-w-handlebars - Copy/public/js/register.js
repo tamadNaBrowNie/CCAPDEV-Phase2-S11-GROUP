@@ -1,8 +1,4 @@
 $(() => {//this is short-shorthand for $(document).ready(function() {})
-    
-    var User = {
-        Name: String, Password: String
-    };
     $('#getRegistered').click(()=>{ $('#regDiv').show();})
     $('.cancel, .close').click(() => { $('#regDiv').hide(); });
     $('.modal').click((modal) => {
