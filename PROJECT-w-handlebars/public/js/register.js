@@ -13,7 +13,7 @@ $(() => {//this is short-shorthand for $(document).ready(function() {})
     $('[name = "submit"]').click(() => {
         User.Name = $('#userName').val();
         User.Password = $('#passWord').val();
-        $.post('localhost:3000', User).done((res) => {"you are now registered" + res})
+        $.post('localhost:3000', User, alert("You are now registered"), "json")
     })
 /*TODO
     if we need extra logic for none http things, this is where we put it.
