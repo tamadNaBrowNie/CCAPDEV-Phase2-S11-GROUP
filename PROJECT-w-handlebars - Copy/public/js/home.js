@@ -1,4 +1,0 @@
-
-$(() => {
-    $('div').appendTo('header');
-})
