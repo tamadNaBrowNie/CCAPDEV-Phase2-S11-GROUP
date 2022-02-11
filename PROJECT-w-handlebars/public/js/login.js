@@ -1,7 +1,5 @@
 
 $(() => {
-    $('#login').attr('method', 'post');
-    $('#login').attr('action', 'foo');
     $(".reg-Form").submit(() => {
         var url = 'http://localhost:3000';
         var User = {
