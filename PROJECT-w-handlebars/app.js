@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 //check if I need this
 const Post = require('./database/models/Post')
 
-mongoose.connect('mongodb://loclahost/accont-db');
+mongoose.connect('mongodb://localhost/account-db');
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
