@@ -1,5 +1,6 @@
+
 $(() => {//this is short-shorthand for $(document).ready(function() {})
-    
+
     var User = {
         Name: String, Password: String, Email: String
     };
@@ -12,12 +13,14 @@ $(() => {//this is short-shorthand for $(document).ready(function() {})
             $('.modal').hide();
         }
     });
-    $('[name = "submit"]').click(() => {
+   $('[name = "submit"]').click(() => {
+       const mongoose = require("mongoose");
+       const Model = require("../database/models/User")
         var userModel = mongoose.model('User', new Schema(User));
         User.Name = $('#userName').val();
         User.Password = $('#passWord').val();
         User.Email = $('#eMail').val();
-        $.post('localhost:3000', userModel, console.log(User));
+        $.post('localhost:3000/submit-user', userModel);
     })
 /*TODO
     if we need extra logic for none http things, this is where we put it.
