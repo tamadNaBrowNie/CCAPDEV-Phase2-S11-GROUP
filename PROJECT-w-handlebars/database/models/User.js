@@ -6,4 +6,4 @@ const userSchema = new Schema({
     Email: { type: String, required: true}
 })
 
-module.exports = (User, userSchema);
+module.exports = (userSchema, Schema);
