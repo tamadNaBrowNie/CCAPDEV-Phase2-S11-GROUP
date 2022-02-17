@@ -72,10 +72,14 @@ app.get('/content', async (req, res) => {
     const posts = await Post.find({})
     res.render('content', { posts })
 });
-app.post('/submit-user', (req, res) =>
-    User.create(req.body, (error, post) => {
-        console.log(req.body)
-        res.redirect('/')
-    }
+app.post('/submit-user', (req, res) => {
+    User.Name = req.body.uName;
+    User.Password = req.body.passWord;
+    User.Email = req.body.eMail;
+    User.create();
+}
+    
+    
+    
     )
-)
+
