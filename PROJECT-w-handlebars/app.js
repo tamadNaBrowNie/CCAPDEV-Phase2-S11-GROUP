@@ -62,6 +62,7 @@ app.get('/*', ( req, res ) => {
 app.post('/submit-post', function(req, res) {
     Post.create(req.body, (error, post) =>
     {
+        console.log(req.body)
         res.redirect('/')
     })
 });
