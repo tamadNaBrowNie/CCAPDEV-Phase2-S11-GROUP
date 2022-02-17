@@ -3,7 +3,8 @@ $(() => {//this is short-shorthand for $(document).ready(function() {})
     var User = {
         Name: String, Password: String, Email: String
     };
-    var userModel = mongoose.model('User', new Schema(User));
+
+  
     $('#getRegistered').click(()=>{ $('#regDiv').show();})
     $('.cancel, .close').click(() => { $('#regDiv').hide(); });
     $('.modal').click((modal) => {
@@ -12,6 +13,7 @@ $(() => {//this is short-shorthand for $(document).ready(function() {})
         }
     });
     $('[name = "submit"]').click(() => {
+        var userModel = mongoose.model('User', new Schema(User));
         User.Name = $('#userName').val();
         User.Password = $('#passWord').val();
         User.Email = $('#eMail').val();
