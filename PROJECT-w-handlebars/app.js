@@ -5,7 +5,7 @@ const exphbs = require('express-handlebars');
 const mongoose = require('mongoose');
 
 //check if I need this
-const Post = require('./database/models/User')
+const User = require('./database/models/User')
 
 mongoose.connect('mongodb://localhost/account-db');
 
@@ -70,3 +70,9 @@ app.get('/content', async(req,res) => {
     const posts = await Post.find({})
     res.render('content',{posts})
 })
+app.post('/submit-user', function(req, res) {
+    User.create(req.body, (error, post) =>
+    {
+        res.redirect('/')
+    })
+});
