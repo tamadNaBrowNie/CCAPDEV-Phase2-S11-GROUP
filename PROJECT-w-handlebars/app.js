@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 //check if I need this
 const Post = require('./database/models/Post')
 
-mongoose.connect('mongodb://loclahost/accont-db');
+mongoose.connect('mongodb://localhost/account-db');
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
@@ -62,6 +62,7 @@ app.get('/*', ( req, res ) => {
 app.post('/submit-post', function(req, res) {
     Post.create(req.body, (error, post) =>
     {
+        console.log(req.body)
         res.redirect('/')
     })
 });
