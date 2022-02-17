@@ -73,10 +73,12 @@ app.get('/content', async (req, res) => {
     res.render('content', { posts })
 });
 app.post('/submit-user', (req, res) => {
-    User.Name = req.body.uName;
-    User.Password = req.body.passWord;
-    User.Email = req.body.eMail;
-    User.create();
+    
+   User.create( (error, user) =>  {
+    console.log(req.body)
+    res.redirect('/')
+})
+
 }
     
     
