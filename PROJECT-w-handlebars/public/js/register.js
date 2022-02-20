@@ -5,7 +5,7 @@ $(() => {//this is short-shorthand for $(document).ready(function() {})
         Name: String, Password: String, Email: String
     };
 
-  
+
     $('#getRegistered').click(() => { $('#regDiv').show(); })
     $('.cancel, .close').click(() => { $('#regDiv').hide(); });
     $('.modal').click((modal) => {
@@ -19,7 +19,7 @@ $(() => {//this is short-shorthand for $(document).ready(function() {})
         User.Email = $('#eMail').val();
         $.ajax({
             type: "POST",
-            url: "localhost:3000/submit-user",
+            url: "mongodb://localhost/account-db",
             data: User,
             dataType: 'json',
             success: function (response) {
@@ -31,5 +31,5 @@ $(() => {//this is short-shorthand for $(document).ready(function() {})
             if we need extra logic for none http things, this is where we put it.
         */
     });
-   
+
 })

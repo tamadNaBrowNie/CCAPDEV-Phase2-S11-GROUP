@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 const mongoose = require('mongoose');
-
+var db=mongoose.connection;
 //check if I need this
 const User = require('./database/models/User')
 
@@ -71,8 +71,23 @@ app.get('/content', async(req,res) => {
     res.render('content',{posts})
 })
 app.post('/submit-user', function(req, res) {
-    User.create(req.body, (error, post) =>
-    {
-        res.redirect('/')
-    })
+  var username = req.body.userName;
+var password =req.body.passWord;
+var email = req.body.eMail;
+
+
+var data = {
+  "username": username,
+  "email":email,
+  "password":password
+
+}
+
+      db.collection('details').insertOne(data,function(err, collection){
+		      if (err) throw err;
+		        console.log("Record inserted Successfully");
+	    });
+      res.redirect('/login')
+
+
 });
