@@ -65,7 +65,7 @@ app.post('/submit-login', (req, res) => {
      'password ': req.pWord
     }
     db.collection('users').findOne(info, (doc, err) => {
-        (doc === null) ? alert("No user or password like that") : res.render('/');
+        (doc === null) ? alert("Incorrect username or password") : res.render('/');
         res.render('/login');
     });
     
