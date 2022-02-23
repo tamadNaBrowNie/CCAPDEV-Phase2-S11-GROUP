@@ -64,8 +64,11 @@ app.post('/submit-login', (req, res) => {
         'username ': req.tuName,
      'password ': req.pWord
     }
-    db.collection('users').findOne(info);
-    res.redirect('/')
+    db.collection('users').findOne(info, (doc, err) => {
+        (doc === null) ? alert("No user or password like that") : res.render('/');
+        res.render('/login');
+    });
+    
 });
 //need to add content html
 app.get('/content', async(req,res) => {
