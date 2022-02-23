@@ -65,6 +65,7 @@ app.post('/submit-login', (req, res) => {
      'password ': req.pWord
     }
     db.collection('users').findOne(info);
+    res.redirect('/')
 });
 //need to add content html
 app.get('/content', async(req,res) => {
