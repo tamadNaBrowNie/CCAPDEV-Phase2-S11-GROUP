@@ -71,7 +71,7 @@ app.get('/content', async(req,res) => {
     res.render('content',{posts})
 })
 app.post('/submit-user', function(req, res) {
-  var username = req.body.userName;
+  var username = req.body.uName;
 var password =req.body.passWord;
 var email = req.body.eMail;
 
@@ -83,7 +83,7 @@ var data = {
 
 }
 
-      db.collection('details').insertOne(data,function(err, collection){
+      db.collection('users').insertOne(data,function(err, collection){
 		      if (err) throw err;
 		        console.log("Record inserted Successfully");
 	    });
