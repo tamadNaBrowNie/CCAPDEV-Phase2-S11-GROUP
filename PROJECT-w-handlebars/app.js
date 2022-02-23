@@ -64,9 +64,14 @@ app.post('/submit-login', (req, res) => {
         'username ': req.tuName,
      'password ': req.pWord
     }
-    db.collection('users').findOne(info, (doc, err) => {
+    db.collection('users').findOne(info, (err, doc) => {
+        try {
+         
         (doc === null) ? alert("Incorrect username or password") : res.render('/');
-        res.render('/login');
+        res.render('/login');   
+        } catch (err) {
+            alert(err)
+        }
     });
     
 });
