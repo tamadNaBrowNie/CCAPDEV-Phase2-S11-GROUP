@@ -59,27 +59,27 @@ app.get('/*', ( req, res ) => {
     res.render("404notfound");
 })
 
-app.post('/submit-post', function(req, res) {
-    Post.create(req.body, (error, post) =>
-    {
-        res.redirect('/')
-    })
+app.post('/submit-login', (req, res) => {
+   var info = {
+        'username ': req.tuName,
+     'password ': req.pWord
+    }
+    db.collection('users').findOne(info);
 });
 //need to add content html
 app.get('/content', async(req,res) => {
     const posts = await Post.find({})
     res.render('content',{posts})
 })
-app.post('/submit-user', function(req, res) {
-  var username = req.body.uName;
-var password =req.body.passWord;
-var email = req.body.eMail;
 
+
+
+app.post('/submit-user', function(req, res) {
 
 var data = {
-  "username": username,
-  "email":email,
-  "password":password
+  "username": req.body.uName,
+  "email":req.body.eMail,
+  "password":req.body.passWord
 
 }
 
