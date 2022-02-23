@@ -1,9 +1,7 @@
 
 $(() => {//this is short-shorthand for $(document).ready(function() {})
+    var form = '.reg-Form';
 
-    var User = {
-        Name: String, Password: String, Email: String
-    };
 
 
     $('#getRegistered').click(() => { $('#regDiv').show(); })
@@ -13,19 +11,19 @@ $(() => {//this is short-shorthand for $(document).ready(function() {})
             $('.modal').hide();
         }
     });
-    $('.reg-Form').submit(() => {
-        User.Name = $('#userName').val();
-        User.Password = $('#passWord').val();
-        User.Email = $('#eMail').val();
-        $.ajax({
-            type: "POST",
-            url: "mongodb://localhost/account-db",
-            data: User,
-            dataType: 'json',
-            success: function (response) {
-                console.log(response);
-            }
-        });
+    $('#bSub').click((e) => {
+        
+        pw = $('#passWord').val();
+        cpw = $('#confirmPW').val();
+        if (pw !== cpw) {
+            e.preventDefault();
+            alert("Passwords do not match");
+            $(form).trigger("reset");
+        }
+        else { 
+            $(form).trigger('submit');
+        } 
+
 
         /*TODO
             if we need extra logic for none http things, this is where we put it.
